@@ -23,14 +23,13 @@ Abrí el notebook directo en Colab:
 
 > Si cambiás el nombre o la ruta del notebook, actualizá este enlace.
 
----
 
 ## 📥 Datos (públicos en Google Drive)
 
 El CSV **`datos_tratados.csv`** está disponible públicamente.
 
 **Descarga directa (recomendada):**
-```python
+python
 import pandas as pd
 csv_link = "https://drive.google.com/uc?export=download&id=1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt"
 df = pd.read_csv(csv_link)
