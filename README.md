@@ -15,7 +15,6 @@ Incluye: preparación de datos, correlación/selección de variables, **SMOTE** 
 └── README.md```
 
 
----
 
 ## 🚀 Ejecutar en Google Colab
 
