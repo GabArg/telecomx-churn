@@ -1,35 +1,67 @@
 # Telecom X – Parte 2: Predicción de Cancelación (Churn)
 
-Este repositorio contiene el pipeline para predecir **churn** en **Telecom X** (Parte 2).  
-Incluye preparación de datos, correlación/selección de variables, modelos (Logística, KNN, Random Forest), SMOTE y evaluación.
+Proyecto de Machine Learning para predecir la probabilidad de **cancelación (churn)** en clientes de **Telecom X**.  
+Incluye: preparación de datos, correlación/selección de variables, **SMOTE** para balanceo, modelos (Regresión Logística, KNN, Random Forest), evaluación y conclusiones.
 
-## 📁 Estructura
-```
-.
-├─ notebooks/
-│  └─ TelecomX_Parte2_Churn_EXT.ipynb   # Notebook principal (Colab-friendly)
-├─ src/                                  # (opcional) Código reutilizable
-├─ data/                                  # Archivos de datos (ignorado por git)
-│  └─ README.md                           # Instrucciones para obtener datos
-├─ reports/
-│  └─ figures/                            # Gráficos para el informe
-├─ requirements.txt
-├─ .gitignore
-├─ LICENSE
-└─ README.md
-```
+---
 
-## 🚀 Cómo ejecutar en Colab
-1. Sube el notebook `notebooks/TelecomX_Parte2_Churn_EXT.ipynb` a Colab.  
-2. Monta Google Drive y apunta a tu `datos_tratados.csv`.  
-3. (Si hace falta) instala dependencias: `pip install -q imbalanced-learn`.
+## 📂 Estructura
+telecomx-churn/
+├── notebooks/
+│ └── TelecomX_Parte2_Churn_EXT.ipynb
+├── requirements.txt
+├── LICENSE
+└── README.md
 
-## 🧱 Requisitos (para ejecución local)
-```bash
+
+---
+
+## 🚀 Ejecutar en Google Colab
+
+Abrí el notebook directo en Colab:  
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GabArg/telecomx-churn/blob/main/notebooks/TelecomX_Parte2_Churn_EXT.ipynb)
+
+> Si cambiás el nombre o la ruta del notebook, actualizá este enlace.
+
+---
+
+## 📥 Datos (públicos en Google Drive)
+
+El CSV **`datos_tratados.csv`** está disponible públicamente.
+
+**Descarga directa (recomendada):**
+```python
+import pandas as pd
+csv_link = "https://drive.google.com/uc?export=download&id=1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt"
+df = pd.read_csv(csv_link)
+df.head()
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Ajustá esta ruta si tu archivo está en otra carpeta
+df = pd.read_csv('/content/drive/MyDrive/ruta/a/datos_tratados.csv')
+
 pip install -r requirements.txt
-```
 
-## 🗂️ Datos
-- Los datasets no se versionan en git por tamaño y privacidad.  
-- Coloca los CSV en `data/` (la carpeta está ignorada por git).  
-- Sigue las instrucciones en `data/README.md`.
+!pip install -q imbalanced-learn
+
+🎯 Objetivos del desafío
+Preparación de datos (tratamiento, encoding, normalización si corresponde).
+
+Correlación y selección de variables.
+
+Modelado (al menos dos modelos) — Logística / KNN / Random Forest.
+
+Evaluación (Accuracy, Precision, Recall, F1, ROC-AUC, Matriz de confusión).
+
+Interpretación (importancia de variables / coeficientes) y conclusiones estratégicas.
+
+📝 Notas
+No se versionan datasets crudos en el repo.
+
+El dataset se obtiene por enlace público de Drive (ver arriba).
+
+El notebook incluye secciones extra: SMOTE, búsqueda de hiperparámetros y comparativa de modelos.
+
+
