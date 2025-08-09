@@ -7,12 +7,12 @@ Incluye: preparación de datos, correlación/selección de variables, **SMOTE** 
 
 ## 📂 Estructura
 
-telecomx-churn/
+```telecomx-churn/
 ├── notebooks/
 │ └── TelecomX_Parte2_Churn_EXT.ipynb
 ├── requirements.txt
 ├── LICENSE
-└── README.md
+└── README.md```
 
 
 ---
