@@ -6,15 +6,16 @@ Incluye: preparación de datos, correlación/selección de variables, **SMOTE** 
 ---
 
 ## 📂 Estructura
-
-```telecomx-churn/
+```
+telecomx-churn/
 ├── notebooks/
 │ └── TelecomX_Parte2_Churn_EXT.ipynb
 ├── requirements.txt
 ├── LICENSE
-└── README.md```
+└── README.md
+```
 
-
+---
 
 ## 🚀 Ejecutar en Google Colab
 
@@ -23,13 +24,14 @@ Abrí el notebook directo en Colab:
 
 > Si cambiás el nombre o la ruta del notebook, actualizá este enlace.
 
+---
 
 ## 📥 Datos (públicos en Google Drive)
 
 El CSV **`datos_tratados.csv`** está disponible públicamente.
 
 **Descarga directa (recomendada):**
-python
+```python
 import pandas as pd
 csv_link = "https://drive.google.com/uc?export=download&id=1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt"
 df = pd.read_csv(csv_link)
@@ -44,6 +46,7 @@ df = pd.read_csv('/content/drive/MyDrive/ruta/a/datos_tratados.csv')
 ⚙️ Instalación de dependencias
 pip install -r requirements.txt
 pip install -q imbalanced-learn
+
 
 🎯 Objetivos del desafío
 Preparación de datos (tratamiento, encoding, normalización si corresponde).
@@ -62,3 +65,5 @@ No se versionan datasets crudos en el repo.
 El dataset se obtiene por enlace público de Drive (ver arriba).
 
 El notebook incluye secciones extra: SMOTE, búsqueda de hiperparámetros y comparativa de modelos.
+
+
