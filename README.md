@@ -22,75 +22,47 @@ telecomx-churn/
 - `README.md` → documentación del proyecto.  
 
 
-🛠️ Preparación de los datos
-Clasificación de variables
+## 🛠️ Preparación de los datos
 
-Categóricas: género, método_pago, tipo_contrato, etc.
+### 📌 Clasificación de variables
+- **Categóricas:** `género`, `método_pago`, `tipo_contrato`, etc.
+- **Numéricas:** `tenure`, `monthly_charges`, `total_charges`, etc.
 
-Numéricas: tenure, monthly_charges, total_charges, etc.
+### 🔄 Procesamiento
+1. Tratamiento de valores nulos.
+2. Codificación de variables categóricas (**One-Hot Encoding**).
+3. Normalización de variables numéricas.
+4. Balanceo de clases con **SMOTE**.
 
-Procesamiento
+### 📂 Separación de datos
+- 80% entrenamiento / 20% prueba.
 
-Tratamiento de valores nulos.
+---
 
-Encoding de variables categóricas (One-Hot Encoding).
+## 📊 Ejemplos de visualizaciones e insights
 
-Normalización de variables numéricas.
+### Comparativa ROC-AUC
+El **Random Forest Optimizado** presenta una mejora significativa respecto al modelo base, aumentando el **ROC-AUC** de `0.78` a `0.81`.
 
-Balanceo de clases con SMOTE.
+![Comparativa ROC-AUC](ruta/a/imagen.png)
 
-Separación de datos
+---
 
-80% entrenamiento / 20% prueba.
+## 🧠 Modelado y justificación
 
-📊 Ejemplos de visualizaciones e insights
-Comparativa ROC-AUC
-
-El Random Forest Optimizado presenta una mejora significativa respecto al modelo base, aumentando el ROC-AUC de 0.78 a 0.81.
-
-🧠 Modelado y justificación
 Se entrenaron y evaluaron los siguientes modelos:
 
-Regresión Logística
+- **Regresión Logística**
+- **K-Nearest Neighbors (KNN)**
+- **Random Forest** (base y optimizado)
 
-K-Nearest Neighbors (KNN)
+**Métricas evaluadas:**
+- Accuracy
+- Precisión
+- Recall
+- F1-Score
+- ROC-AUC
+- Matriz de confusión
 
-Random Forest (base y optimizado)
-
-Se seleccionó Random Forest Optimizado como modelo final debido a su mejor balance entre Recall y ROC-AUC, métricas clave para problemas de churn.
-
-🚀 Ejecución del cuaderno
-
-1️⃣ Instalar dependencias
-pip install -r requirements.txt
-pip install imbalanced-learn
-
-2️⃣ Cargar datos tratados
-Desde Google Drive: 📄 datos_tratados.csv
-
-En Colab:
-from google.colab import drive
-drive.mount('/content/drive')
-
-import pandas as pd
-df = pd.read_csv('/content/drive/MyDrive/ruta/a/datos_tratados.csv')
-df.head()
-3️⃣ Abrir en Google Colab
-
-
-📌 Notas
-Los datos tratados se encuentran en un enlace público de Google Drive.
-
-El notebook incluye análisis exploratorio (EDA), preparación de datos, búsqueda de hiperparámetros y comparativa de modelos.
-
-Este README cumple con la documentación solicitada, facilitando la comprensión y ejecución del proyecto.
-
-📷 Cómo agregar imágenes al README
-En tu repo, crea una carpeta llamada img (en la raíz del proyecto).
-
-Guarda dentro la(s) imagen(es) que quieras mostrar (ejemplo: roc_auc_comparativa.png).
-
-En el README, para mostrar la imagen usa:
-![Texto alternativo](img/roc_auc_comparativa.png)
-
-
+**Conclusión:**  
+El modelo **Random Forest Optimizado** fue el que obtuvo el mejor rendimiento en la métrica ROC-AUC, por lo que se selecciona como modelo final recomendado.
