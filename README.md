@@ -1,4 +1,5 @@
-📌 Telecom X – Parte 2: Predicción de Cancelación (Churn)
+##📌 Telecom X – Parte 2: Predicción de Cancelación (Churn)
+
 🎯 Propósito del análisis
 Este proyecto busca predecir la probabilidad de cancelación (churn) de clientes de Telecom X utilizando técnicas de Machine Learning.
 El objetivo principal es identificar las variables más influyentes en la cancelación de clientes y construir modelos predictivos para anticipar y reducir la pérdida de clientes.
