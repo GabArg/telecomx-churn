@@ -1,69 +1,92 @@
-# Telecom X – Parte 2: Predicción de Cancelación (Churn)
+📌 Telecom X – Parte 2: Predicción de Cancelación (Churn)
+🎯 Propósito del análisis
+Este proyecto busca predecir la probabilidad de cancelación (churn) de clientes de Telecom X utilizando técnicas de Machine Learning.
+El objetivo principal es identificar las variables más influyentes en la cancelación de clientes y construir modelos predictivos para anticipar y reducir la pérdida de clientes.
 
-Proyecto de Machine Learning para predecir la probabilidad de **cancelación (churn)** en clientes de **Telecom X**.  
-Incluye: preparación de datos, correlación/selección de variables, **SMOTE** para balanceo, modelos (Regresión Logística, KNN, Random Forest), evaluación y conclusiones.
-
----
-
-## 📂 Estructura
-```
+📂 Estructura del proyecto
+'''
 telecomx-churn/
-├── notebooks/
-│ └── TelecomX_Parte2_Churn_EXT.ipynb
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
+│── notebooks/
+│   └── TelecomX_Parte2_Churn_EXT.ipynb
+│── requirements.txt
+│── LICENSE
+│── README.md
+'''
 
----
+notebooks/ → cuaderno principal con todo el análisis y modelado.
 
-## 🚀 Ejecutar en Google Colab
+requirements.txt → librerías necesarias para ejecutar el proyecto.
 
-Abrí el notebook directo en Colab:  
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GabArg/telecomx-churn/blob/main/telecomx-churn/notebooks/TelecomX_Parte2_Churn_EXT.ipynb)
+datos_tratados.csv → dataset procesado (público en Google Drive).
 
+🛠️ Preparación de los datos
+Clasificación de variables
 
+Categóricas: género, método_pago, tipo_contrato, etc.
 
----
+Numéricas: tenure, monthly_charges, total_charges, etc.
 
-## 📥 Datos (públicos en Google Drive)
+Procesamiento
 
-El CSV **`datos_tratados.csv`** está disponible públicamente.
+Tratamiento de valores nulos.
 
-**Descarga directa (recomendada):**
-```python
-import pandas as pd
-csv_link = "https://drive.google.com/uc?export=download&id=1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt"
-df = pd.read_csv(csv_link)
-df.head()
-Desde Google Drive en Colab:
+Encoding de variables categóricas (One-Hot Encoding).
+
+Normalización de variables numéricas.
+
+Balanceo de clases con SMOTE.
+
+Separación de datos
+
+80% entrenamiento / 20% prueba.
+
+📊 Ejemplos de visualizaciones e insights
+Comparativa ROC-AUC
+
+El Random Forest Optimizado presenta una mejora significativa respecto al modelo base, aumentando el ROC-AUC de 0.78 a 0.81.
+
+🧠 Modelado y justificación
+Se entrenaron y evaluaron los siguientes modelos:
+
+Regresión Logística
+
+K-Nearest Neighbors (KNN)
+
+Random Forest (base y optimizado)
+
+Se seleccionó Random Forest Optimizado como modelo final debido a su mejor balance entre Recall y ROC-AUC, métricas clave para problemas de churn.
+
+🚀 Ejecución del cuaderno
+1️⃣ Instalar dependencias
+pip install -r requirements.txt
+pip install imbalanced-learn
+
+2️⃣ Cargar datos tratados
+Desde Google Drive: 📄 datos_tratados.csv
+
+En Colab:
 from google.colab import drive
 drive.mount('/content/drive')
 
-
-df = pd.read_csv('[/content/drive/MyDrive/ruta/a/datos_tratados.csv](https://drive.google.com/file/d/1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt/view?usp=drive_link)')
-
-⚙️ Instalación de dependencias
-pip install -r requirements.txt
-pip install -q imbalanced-learn
+import pandas as pd
+df = pd.read_csv('/content/drive/MyDrive/ruta/a/datos_tratados.csv')
+df.head()
+3️⃣ Abrir en Google Colab
 
 
-🎯 Objetivos del desafío
-Preparación de datos (tratamiento, encoding, normalización si corresponde).
+📌 Notas
+Los datos tratados se encuentran en un enlace público de Google Drive.
 
-Correlación y selección de variables.
+El notebook incluye análisis exploratorio (EDA), preparación de datos, búsqueda de hiperparámetros y comparativa de modelos.
 
-Modelado (al menos dos modelos) — Logística / KNN / Random Forest.
+Este README cumple con la documentación solicitada, facilitando la comprensión y ejecución del proyecto.
 
-Evaluación (Accuracy, Precision, Recall, F1, ROC-AUC, Matriz de confusión).
+📷 Cómo agregar imágenes al README
+En tu repo, crea una carpeta llamada img (en la raíz del proyecto).
 
-Interpretación (importancia de variables / coeficientes) y conclusiones estratégicas.
+Guarda dentro la(s) imagen(es) que quieras mostrar (ejemplo: roc_auc_comparativa.png).
 
-📝 Notas
-No se versionan datasets crudos en el repo.
-
-El dataset se obtiene por enlace público de Drive (ver arriba).
-
-El notebook incluye secciones extra: SMOTE, búsqueda de hiperparámetros y comparativa de modelos.
+En el README, para mostrar la imagen usa:
+![Texto alternativo](img/roc_auc_comparativa.png)
 
 
