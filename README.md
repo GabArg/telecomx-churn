@@ -1,70 +1,103 @@
-## 📌 Telecom X – Parte 2: Predicción de Cancelación (Churn)
+# 📌 Telecom X – Parte 2: Predicción de Cancelación (Churn)
 
-### 🎯 Propósito del análisis
+## 🎯 Propósito del análisis
+Este proyecto tiene como objetivo **predecir el churn (cancelación)** de clientes de **Telecom X** en base a variables relevantes.  
+Se aplican técnicas de preparación de datos, análisis de correlación, selección de variables, balanceo de clases (*SMOTE*) y modelado predictivo con diferentes algoritmos de *Machine Learning*.
 
-Este proyecto busca predecir la probabilidad de cancelación (churn) de clientes de Telecom X utilizando técnicas de Machine Learning.
-El objetivo principal es identificar las variables más influyentes en la cancelación de clientes y construir modelos predictivos para anticipar y reducir la pérdida de clientes.
+---
 
-### 📂 Estructura del proyecto
-
+## 📂 Estructura del proyecto
 ```
 telecomx-churn/
-│── notebooks/
-│   └── TelecomX_Parte2_Churn_EXT.ipynb
-│── requirements.txt
-│── LICENSE
-│── README.md
+├── notebooks/
+│   └── TelecomX_Parte2_Churn_EXT.ipynb   # Notebook principal (Colab-friendly)
+├── requirements.txt                      # Dependencias
+├── LICENSE
+├── images/                                # Visualizaciones generadas
+└── README.md
 ```
 
+---
 
-- `notebooks/` → cuaderno principal con todo el análisis y modelado.  
-- `requirements.txt` → librerías necesarias para ejecutar el proyecto.  
-- `datos_tratados.csv` → dataset procesado (público en Google Drive).  
-- `LICENSE` → licencia del proyecto.  
-- `README.md` → documentación del proyecto.  
+## 🚀 Ejecutar en Google Colab
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GabArg/telecomx-churn/blob/main/notebooks/TelecomX_Parte2_Churn_EXT.ipynb)
 
+---
+
+## 📥 Datos (públicos en Google Drive)
+El dataset procesado `datos_tratados.csv` se encuentra disponible en Google Drive.
+
+**Carga directa en Python:**
+```python
+import pandas as pd
+csv_link = "https://drive.google.com/uc?export=download&id=1tZEzR9gKBlsL7UOgu5kmiCLCLoNCx2iL"
+df = pd.read_csv(csv_link)
+df.head()
+```
+
+---
 
 ## 🛠️ Preparación de los datos
 
-### 📌 Clasificación de variables
-- **Categóricas:** `género`, `método_pago`, `tipo_contrato`, etc.
-- **Numéricas:** `tenure`, `monthly_charges`, `total_charges`, etc.
-
-### 🔄 Procesamiento
-1. Tratamiento de valores nulos.
-2. Codificación de variables categóricas (**One-Hot Encoding**).
-3. Normalización de variables numéricas.
-4. Balanceo de clases con **SMOTE**.
-
-### 📂 Separación de datos
-- 80% entrenamiento / 20% prueba.
+- **Clasificación de variables:**
+  - Categóricas: género, método de pago, tipo de contrato, etc.
+  - Numéricas: tenure, monthly_charges, total_charges, etc.
+- **Codificación:** *One-Hot Encoding* para variables categóricas.
+- **Balanceo de clases:** *SMOTE* para igualar la proporción de clientes que cancelaron y no cancelaron.
+- **Normalización:** aplicada para modelos sensibles a la escala (KNN, Regresión Logística).
+- **Separación:** 80% entrenamiento y 20% prueba.
 
 ---
 
 ## 📊 Ejemplos de visualizaciones e insights
 
 ### Comparativa ROC-AUC
-El **Random Forest Optimizado** presenta una mejora significativa respecto al modelo base, aumentando el **ROC-AUC** de `0.78` a `0.81`.
+![Comparativa ROC-AUC](images/comparativa_roc_auc.png)
 
-![Comparativa ROC-AUC](ruta/a/imagen.png)
+### Importancia de Variables
+![Importancia de Variables](images/importancia_variables.png)
+
+### Matriz de Confusión
+![Matriz de Confusión](images/matriz_confusion.png)
 
 ---
 
-## 🧠 Modelado y justificación
+## 🤖 Modelado y evaluación
 
 Se entrenaron y evaluaron los siguientes modelos:
+- Regresión Logística
+- K-Nearest Neighbors (KNN)
+- Árbol de Decisión
+- Random Forest
+- XGBoost
 
-- **Regresión Logística**
-- **K-Nearest Neighbors (KNN)**
-- **Random Forest** (base y optimizado)
-
-**Métricas evaluadas:**
+**Métricas utilizadas:**
 - Accuracy
-- Precisión
+- Precision
 - Recall
-- F1-Score
+- F1-score
 - ROC-AUC
 - Matriz de confusión
 
-**Conclusión:**  
-El modelo **Random Forest Optimizado** fue el que obtuvo el mejor rendimiento en la métrica ROC-AUC, por lo que se selecciona como modelo final recomendado.
+**Resultado destacado:**  
+El **Random Forest Optimizado** presentó la mejor métrica ROC-AUC (`0.81`), superando a los demás modelos.
+
+---
+
+## 📋 Instrucciones para ejecutar localmente
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/GabArg/telecomx-churn.git
+cd telecomx-churn
+
+# 2. Instalar dependencias
+pip install -r requirements.txt
+
+# 3. Ejecutar el notebook
+jupyter notebook notebooks/TelecomX_Parte2_Churn_EXT.ipynb
+```
+
+---
+
+## 📜 Licencia
+Este proyecto está bajo licencia MIT. Ver archivo [LICENSE](LICENSE) para más detalles.
