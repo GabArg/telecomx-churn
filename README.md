@@ -5,14 +5,14 @@ El objetivo principal es identificar las variables más influyentes en la cancel
 
 📂 Estructura del proyecto
 
-'''
+```
 telecomx-churn/
 │── notebooks/
 │   └── TelecomX_Parte2_Churn_EXT.ipynb
 │── requirements.txt
 │── LICENSE
 │── README.md
-'''
+```
 
 notebooks/ → cuaderno principal con todo el análisis y modelado.
 
