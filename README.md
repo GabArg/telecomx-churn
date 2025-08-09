@@ -58,6 +58,7 @@ Random Forest (base y optimizado)
 Se seleccionó Random Forest Optimizado como modelo final debido a su mejor balance entre Recall y ROC-AUC, métricas clave para problemas de churn.
 
 🚀 Ejecución del cuaderno
+
 1️⃣ Instalar dependencias
 pip install -r requirements.txt
 pip install imbalanced-learn
