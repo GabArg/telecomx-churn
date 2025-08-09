@@ -40,8 +40,8 @@ Desde Google Drive en Colab:
 from google.colab import drive
 drive.mount('/content/drive')
 
-# Ajustá esta ruta si tu archivo está en otra carpeta
-df = pd.read_csv('/content/drive/MyDrive/ruta/a/datos_tratados.csv')
+
+df = pd.read_csv('[/content/drive/MyDrive/ruta/a/datos_tratados.csv](https://drive.google.com/file/d/1EcgqqmAklu6AHOxXGBDJscJJTP3nvrUt/view?usp=drive_link)')
 
 ⚙️ Instalación de dependencias
 pip install -r requirements.txt
