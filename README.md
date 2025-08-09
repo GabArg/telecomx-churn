@@ -22,7 +22,6 @@ telecomx-churn/
 Abrí el notebook directo en Colab:  
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GabArg/telecomx-churn/blob/main/telecomx-churn/notebooks/TelecomX_Parte2_Churn_EXT.ipynb)
 
-> Si cambiás el nombre o la ruta del notebook, actualizá este enlace.
 
 
 ---
